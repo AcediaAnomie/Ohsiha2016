@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <h3 style="">My movies</h3>
+    
+    <div>
+        <h4 id="watch-list-header">Watch list</h4>
+        <span class="glyphicon glyphicon-info-sign" style="cursor:default;" title="You can drag and drop movies between the lists" aria-hidden="true"></span>
+    </div>
+
+    {% for movie in movielist %}
+        {% if forloop.first %}
+            <div id="watch-list" ondrop="drop(event)" ondragover="allowDrop(event)">
+        {% endif %}
+
+        {% if not movie.IsWatched %} 
+            {% include "accordionItem.html" with movie=movie %}
+        {% endif %}
+
+        {% if forloop.last %}
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <h4 id="watch-list-header">Watched list</h4>
+    {% for movie in movielist %}
+        {% if forloop.first %}
+            <div id="have-watched-list" ondrop="drop(event)" ondragover="allowDrop(event)">
+        {% endif %}
+
+        {% if movie.IsWatched %} 
+            {% include "accordionItem.html" with movie=movie %}
+        {% endif %}
+
+        {% if forloop.last %}
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <div class="error">
+        {# Print error messages here #}
+    </div>
+
+    <a href="/movies/search">Search</a>
+{% endblock content %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{{ STATIC_URL }}js/removeMovie.js"></script>
+    <script src="{{ STATIC_URL }}js/accordion.js"></script>
+    <script src="{{ STATIC_URL }}js/addNote.js"></script>
+    <script src="{{ STATIC_URL }}js/dragndrop.js"></script>
+{% endblock js %}

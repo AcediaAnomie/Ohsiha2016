@@ -1,0 +1,83 @@
+body {
+  background: #23211F;
+}
+.navbar {
+  background: #141414;
+  height: 80px;
+  border: 1px solid #383333;
+}
+.navbar ul.nav a {
+  color: #FFF;
+}
+.main-container {
+  background-color: #383634;
+  padding: 1%;
+  color: #FFF;
+}
+.main-container input,
+.main-container button,
+.main-container textarea {
+  color: #000;
+}
+/*
+span.helptext {
+    display: none;
+}
+*/
+form.search-form .errorlist {
+  display: none;
+}
+form input {
+  display: block;
+}
+.accordion {
+  overflow: hidden;
+  background: #f7f7f7;
+}
+.accordion,
+.accordion * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.accordion .accordion-section-title a,
+.accordion * .accordion-section-title a {
+  width: 100%;
+  padding: 15px;
+  display: inline-block;
+  border-bottom: 1px solid #1a1a1a;
+  background: #404040;
+  transition: all linear 0.15s;
+  font-size: 1.2em;
+  text-shadow: 0px 1px 0px #1a1a1a;
+  color: #FFF;
+}
+.accordion .accordion-section-title.active,
+.accordion * .accordion-section-title.active,
+.accordion .accordion-section-title:hover,
+.accordion * .accordion-section-title:hover {
+  background: #333333;
+  text-decoration: none;
+  color: #fff !important;
+}
+.accordion .accordion-section,
+.accordion * .accordion-section {
+  height: auto;
+}
+.accordion .accordion-section:last-child .accordion-section-title,
+.accordion * .accordion-section:last-child .accordion-section-title {
+  border-bottom: none;
+}
+.accordion .accordion-section-content,
+.accordion * .accordion-section-content {
+  padding: 15px;
+  display: none;
+  background: #4c4c4c;
+  overflow: auto;
+}
+#note-textarea {
+  resize: none;
+}
+.error {
+  color: red;
+}

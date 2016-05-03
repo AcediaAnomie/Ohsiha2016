@@ -1,0 +1,35 @@
+<!-- A structure of an element in movielists -->
+<div id="movie-{{ movie.id }}" class="accordion accordion-border" data-id={{ movie.id }} draggable="true" ondragstart="drag(event)">
+    <div class="accordion-section">
+        <div class="accordion-section-title">
+            <a class="" href="">{{ movie.Title }}</a>
+            <a class="remove-button" href=""><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+        </div>
+
+        <div class="accordion-section-content">
+
+            {% include "movieInfo.html" with result=movie%}
+            
+            <div class="col-md-8">
+                <div id="note">
+                    <label>Note / Own review:</label>
+                    {# If note is empty, dont't print anything #}
+                    <div class="note-text">{{ movie.note | default_if_none:"" }}</div>
+                    <div class="save-button"><button type='button' class='btn btn-default' id='save-note'>Save note</button></div>
+                </div>
+
+                <div class="note-buttons">
+                    {% if not movie.note %}
+                        <button type="button" class="btn btn-default note-button add-note">Add note</button>
+                    {% else %}
+                        <button type="button" class="btn btn-default note-button add-note">Edit note</button>
+                    {% endif %}
+
+                    {# TODO: Review stars maybe? #}
+                </div>
+            
+                <div class="error"></div>
+            </div>
+        </div>
+    </div>
+</div>

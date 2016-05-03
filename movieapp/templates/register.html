@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Register form</h3>
+
+    {% comment %} Add special token to form to prevent forged request {% endcomment %}
+    <form action="" class="register-form" method="POST">{% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Create account">
+    </form>
+{% endblock content %}

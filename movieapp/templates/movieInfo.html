@@ -1,0 +1,18 @@
+<div class="col-md-4">
+    <img src="{{ result.Poster }}" alt="Poster">
+</div>
+
+<div id="result" class="col-md-8">
+    <h4>Title: {{ result.Title }}</h4>
+    <h4>Year: {{ result.Released }}</h4>
+    <h4>Genre: {{ result.Genre }}</h4>
+    <h4>Director: {{ result.Director }}</h4>
+    <h4>Writers: {{ result.Writer }}</h4>
+    <h4>Actors: {{ result.Actors }}</h4>
+    <h4>IMDB Rating: {{ result.imdbRating }}</h4>
+    <h4>Country: {{ result.Country }}</h4>
+    <br>
+    <h4>Description: {{ result.Plot }}</h4>
+
+    <input type="hidden" name="movie" value="{{result}}">
+</div>

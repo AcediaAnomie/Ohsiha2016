@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Search movies:</h3>
+
+    <form action="" method="GET" class="search-form" role="search"> {# No need for csrf token because we are doing GET request #}
+      {{ form }}
+      <input type="submit" value="Search" />
+    </form>
+{% endblock content %}

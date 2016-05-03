@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Search results:</h3>
+    
+    {% if result.Response == 'True' %}
+
+        {% include "movieInfo.html" %}
+
+        <div id="add-movie" class="col-md-8">
+            <button id="addButton">Add to watchlist</button>
+        <div class="error"></div>
+    </div>
+
+    {% else %}
+        <div id="result">
+        {{ result.Error }}
+        </div>
+    {% endif %}
+
+
+{% endblock content %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{{ STATIC_URL }}js/addMovie.js"></script>
+{% endblock js %}

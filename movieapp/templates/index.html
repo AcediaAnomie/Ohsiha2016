@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <p>Index content here!</p>
+
+    {% if user.is_authenticated %}
+        <a href="/movies">Own movielist</a>
+    {% endif %}
+{% endblock content %}
