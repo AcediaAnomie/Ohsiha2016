@@ -4,9 +4,6 @@
 * Pip 8.1.1
 
 ### How to install ###
-```sh
-$ pip install -r requirements.txt
-```
 Go to project root directory and create virtual env:
 ```sh
 $ virtual venv
@@ -19,6 +16,10 @@ $ source venv/bin/activate
 **Windows**
 ```sh
 $ venv/Scripts/activate
+```
+Finally install all the dependencies:
+```sh
+$ pip install -r requirements.txt
 ```
 ### How to run ###
 You can use either heroku cli or Django's own development server
